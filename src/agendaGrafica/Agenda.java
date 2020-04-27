@@ -1,5 +1,7 @@
 package agendaGrafica;
 
+import javax.swing.JOptionPane;
+
 public class Agenda {
 
 	private Contacto[] contactos;
@@ -37,7 +39,8 @@ public class Agenda {
 			}
 			if(encontrado) 
 			{
-				System.out.println("Se ha añadido");
+				System.out.println( "se ha añadido");
+				
 			}
 			else 
 			{
@@ -63,7 +66,7 @@ public class Agenda {
 	{
 		if(huecosLibres()== contactos.length) 
 		{
-		System.out.println("no hay contactos para mostrar");
+			System.out.println("no hay contactos para mostrar");
 		}
 		else {
 			for(int i=0; i<contactos.length;i++)
@@ -84,7 +87,8 @@ public class Agenda {
 		{
 			if((contactos[i]!=null) && contactos[i].getNombre().equalsIgnoreCase(nombre))
 			{
-				System.out.println("Su telefono es" + contactos[i].getTelefono());
+				JOptionPane.showMessageDialog(null,"se llama " +contactos[i].getNombre() +"\n") ;
+				JOptionPane.showMessageDialog(null,"Su telefono es " + contactos[i].getTelefono());
 				encontrado = true;
 			}
 		}
@@ -118,6 +122,7 @@ public class Agenda {
 			{
 				contactos[i]=null;
 				encontrado=true;
+				System.out.println("Se ha eliminado correctamente");
 			}
 		}
 		if(!encontrado)

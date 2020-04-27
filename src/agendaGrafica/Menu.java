@@ -14,6 +14,8 @@ public class Menu
 		Agenda agendaTelefonica = new Agenda(3);
 		String nombre;
 		int telefono;
+		String email;
+		String direccion;
 		Contacto c;
 		
 		while (!salir)
@@ -40,8 +42,12 @@ public class Menu
 					System.out.println("Escribe un telefono");
 					telefono = sn.nextInt();
 					sn.nextLine();
+					System.out.println("escribe un email");
+					email = sn.nextLine();
+					System.out.println("escribe una direccion");
+					direccion = sn.nextLine();
 					
-					c = new Contacto(nombre, telefono);
+					c = new Contacto(nombre, telefono,email,direccion);
 					
 					agendaTelefonica.añadirContacto(c); 
 					break;
@@ -60,7 +66,7 @@ public class Menu
 					nombre = sn.nextLine();
 					
 					
-					c = new Contacto(nombre, 0);
+					c = new Contacto(nombre, 0,null,null);
 					agendaTelefonica.añadirContacto(c);
 					
 					if(agendaTelefonica.existeContacto(c))
@@ -78,7 +84,7 @@ public class Menu
 					nombre = sn.nextLine();
 					
 					
-					c= new Contacto (nombre,0);
+					c= new Contacto (nombre,0,null,null);
 					
 					agendaTelefonica.eliminarContacto(c);
 					break;
